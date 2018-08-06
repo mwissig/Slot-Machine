@@ -1,8 +1,10 @@
 var reel = ["cherry", "bar", "7", "JACKPOT", "orange", "lemon", "cash", "win", "grapes"]
 var money = 500;
 var triesToPlayWithNoMoney = 0;
-var borrowedFromTodd = 0;
+// var borrowedFromTodd = 0;
+// attempted to add more complex gameplay-- may do later
 
+//gets a random symbol from each reel
 function randomSymbol(reel) {
   reel1 = reel[Math.floor(Math.random() * reel.length)];
   reel2 = reel[Math.floor(Math.random() * reel.length)];
@@ -11,22 +13,23 @@ function randomSymbol(reel) {
   updateReels(reel1, reel2, reel3);
 }
 
+//updates how much money you have on the screen
 function updateMoney(money) {
 	currentMoney.innerHTML = "You have $" + money;
     if (money < 10) {
       	currentMoney.innerHTML = "You don\'t have enough money to play.";
     }
 }
-
+//displays reel results on screen
 function updateReels(reel1, reel2, reel3) {
 	spinResults.innerHTML = (`Results: ${reel1}, ${reel2}, ${reel3}`);
 }
-
+//displays winnings
 function updateWinnings(prize) {
 	currentWinnings.innerHTML = (prize);
 }
 
-
+//checks results for win/loss status
 function checkWin() {
   var win = 0;
   if (reel1 == "JACKPOT" && reel1 == reel2 && reel2 == reel3) {
@@ -51,16 +54,20 @@ updateWinnings(prize);
   updateMoney(money);
 }
 
+//play when button pressed
 function play() {
   if (money >= 10) {
     randomSymbol(reel);
     checkWin();
   } else {
     console.log("You don't have enough money to play.");
-    triesToPlayWithNoMoney += 1;
-      if (triesToPlayWithNoMoney == 3) {
-        enableAskTodd();
-      }
+        prize = "You don't have enough money to play.";
+        updateWinnings(prize);
+          updateMoney(money);
+    // triesToPlayWithNoMoney += 1;
+    //   if (triesToPlayWithNoMoney == 3) {
+    //     enableAskTodd();
+    //   }
       // if (borrowedFromTodd == 1); {
       //           toddStatus.innerHTML = "Todd is pissed that you lost all his money.";
       //         }
@@ -77,7 +84,7 @@ function play() {
 //      document.getElementById("askTodd").style.visibility = 'collapse';
 //      borrowedFromTodd = 1;
 // }
-
+//starting conditions
 console.log(`You have $${money}.`);
 document.getElementById("currentMoney").innerHTML = (`You have $${money}`);
 document.getElementById("spinResults").innerHTML = "";
