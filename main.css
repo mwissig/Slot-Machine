@@ -1,0 +1,36 @@
+html {
+  background-color: rgb(221, 228, 224)
+}
+
+#container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 40px;
+  background-color: rgb(242, 229, 142);
+  border-radius: 5px;
+  text-align: center;
+  border: solid 2px black;
+}
+.play {
+  padding: 15px;
+  font-size: 30px;
+  border: solid 2px black;
+  border-radius: 10px;
+font-family: 'Faster One', cursive;
+background-color: rgb(93, 207, 78);
+}
+.button:hover {
+  background-color: rgb(169, 236, 123);
+}
+h1 {
+  font-family: 'Monoton', cursive;
+  font-weight: normal;
+}
+p {
+font-family: 'Quicksand', sans-serif;
+}
+.todd {
+  border: solid 2px black;
+  border-radius: 10px;
+    visibility: collapse;
+}
