@@ -1,2 +1,2 @@
 # Slot Machine
-A basic slot machine in Javascript
+A basic text-based slot machine made in Javascript.
